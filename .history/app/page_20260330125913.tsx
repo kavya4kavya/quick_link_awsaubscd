@@ -1,5 +1,3 @@
-"use client";
-
 export default function EventSocialLinksPage() {
   const links = [
     {

@@ -1,6 +1,12 @@
-"use client";
-
 export default function EventSocialLinksPage() {
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("awscc.aub@gmail.com");
+      alert("Email copied: awscc.aub@gmail.com");
+    } catch {
+      window.location.href = "mailto:awscc.aub@gmail.com";
+    }
+  };
   const links = [
     {
       name: "Email",
@@ -35,15 +41,6 @@ export default function EventSocialLinksPage() {
     },
   ];
 
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("awscc.aub@gmail.com");
-      alert("Email copied: awscc.aub@gmail.com");
-    } catch {
-      window.location.href = "mailto:awscc.aub@gmail.com";
-    }
-  };
-
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#7c3aed_0%,_#1e1b4b_35%,_#020617_100%)] text-white flex items-center justify-center px-6 py-10">
       <div className="w-full max-w-lg">
@@ -64,45 +61,51 @@ export default function EventSocialLinksPage() {
           </div>
 
           <div className="relative z-10 space-y-4">
-            {links.map((link) =>
+            {links.map((link) => (
               link.isCopy ? (
                 <button
                   key={link.name}
                   onClick={copyEmail}
                   className="group w-full flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-purple-300/20 transition-all duration-300 p-4 text-left"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-fuchsia-400/20 text-xl border border-white/10">
-                    {link.icon}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h2 className="font-semibold text-base sm:text-lg">{link.name}</h2>
-                    <p className="text-xs sm:text-sm text-purple-100/70 break-all">{link.desc}</p>
-                  </div>
-                  <div className="text-purple-200 group-hover:translate-x-1 transition-transform duration-300">
-                    Copy
-                  </div>
-                </button>
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-purple-300/20 transition-all duration-300 p-4"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-fuchsia-400/20 text-xl border border-white/10">
+                  {link.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h2 className="font-semibold text-base sm:text-lg">{link.name}</h2>
+                  <p className="text-xs sm:text-sm text-purple-100/70 truncate">{link.desc}</p>
+                </div>
+                <div className="text-purple-200 group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </div>
+                              </button>
               ) : (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-purple-300/20 transition-all duration-300 p-4"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-fuchsia-400/20 text-xl border border-white/10">
-                    {link.icon}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h2 className="font-semibold text-base sm:text-lg">{link.name}</h2>
-                    <p className="text-xs sm:text-sm text-purple-100/70 truncate">{link.desc}</p>
-                  </div>
-                  <div className="text-purple-200 group-hover:translate-x-1 transition-transform duration-300">
-                    →
-                  </div>
-                </a>
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-purple-300/20 transition-all duration-300 p-4"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/30 to-fuchsia-400/20 text-xl border border-white/10">
+                  {link.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h2 className="font-semibold text-base sm:text-lg">{link.name}</h2>
+                  <p className="text-xs sm:text-sm text-purple-100/70 truncate">{link.desc}</p>
+                </div>
+                <div className="text-purple-200 group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </div>
+              </a>
               )
-            )}
+            ))}
           </div>
 
           <p className="relative z-10 mt-8 text-center text-xs text-purple-100/50">
