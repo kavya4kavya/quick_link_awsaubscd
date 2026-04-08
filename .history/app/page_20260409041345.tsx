@@ -36,19 +36,19 @@ const links: SocialLink[] = [
   {
     name: "LinkedIn - awscc-aub",
     href: "https://www.linkedin.com/in/awscc-aub/",
-    logo: "/linkedin.png",
+    logo: "/aws_logo.png",
     desc: "Professional updates and announcements",
   },
   {
     name: "Meetup - AWSCC AUB",
     href: "https://www.meetup.com/aws-cloud-club-at-amity-university-bengaluru/",
-    logo: "/meetup.png",
+    logo: "/aws_logo.png",
     desc: "Join the community and upcoming sessions",
   },
   {
     name: "Instagram - awscc_aub",
     href: "https://www.instagram.com/awscc_aub",
-    logo: "/instagram.png",
+    logo: "/aws_logo.png",
     desc: "Follow updates, highlights, and stories",
   },
  

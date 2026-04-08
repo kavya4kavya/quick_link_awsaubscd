@@ -13,12 +13,11 @@ type SocialLink = {
 };
 
 const links: SocialLink[] = [
- 
-   {
-    name: "Amity University",
-    href: "https://www.amity.edu/bengaluru/",
-    logo: "/aub_blue.png",
-    desc: "Learn more about the college",
+  {
+    name: "Student Event Website",
+    href: "https://awsaubscd.vercel.app",
+    logo: "/aws-scd-banner.png",
+    desc: "Schedules, speakers, and registrations",
   },
   {
     name: "SCD Website",
@@ -29,29 +28,34 @@ const links: SocialLink[] = [
   {
     name: "Email",
     href: "mailto:awscc.aub@gmail.com",
-    logo: "/cloudClub.png",
+    icon: "✉️",
     desc: "awscc.aub@gmail.com",
     isCopy: true,
   },
   {
-    name: "LinkedIn - awscc-aub",
+    name: "LinkedIn",
     href: "https://www.linkedin.com/in/awscc-aub/",
-    logo: "/linkedin.png",
+    logo: "/aws_logo.png",
     desc: "Professional updates and announcements",
   },
   {
-    name: "Meetup - AWSCC AUB",
+    name: "Meetup",
     href: "https://www.meetup.com/aws-cloud-club-at-amity-university-bengaluru/",
-    logo: "/meetup.png",
+    logo: "/aws_logo.png",
     desc: "Join the community and upcoming sessions",
   },
   {
-    name: "Instagram - awscc_aub",
+    name: "Instagram",
     href: "https://www.instagram.com/awscc_aub",
-    logo: "/instagram.png",
+    logo: "/aws_logo.png",
     desc: "Follow updates, highlights, and stories",
   },
- 
+  {
+    name: "Amity University",
+    href: "https://www.amity.edu/bengaluru/",
+    logo: "/aub_blue.png",
+    desc: "Learn more about the college",
+  },
 ];
 
 export default function SocialHub() {
